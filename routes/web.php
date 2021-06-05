@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PasienController;
+use App\Http\Controllers\DokterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('pasien1461900124', 'PasienController@index');
+// Route::get('pasien1461900124/tambahpasien1461900124', 'PasienController@tambah');
+
+Route::resource('pasien1461900124', PasienController::class);
+Route::resource('tambahpasien1461900124', PasienController::class);
+Route::resource('editpasien1461900124', PasienController::class);
+Route::resource('dokter1461900124', DokterController::class);
