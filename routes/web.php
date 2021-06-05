@@ -25,4 +25,6 @@ Route::get('/', function () {
 Route::resource('pasien1461900124', PasienController::class);
 Route::resource('tambahpasien1461900124', PasienController::class);
 Route::resource('editpasien1461900124', PasienController::class);
+Route::get('/pasien1461900124/hapus/{id}',
+[PasienController::class, 'destroy']);
 Route::resource('dokter1461900124', DokterController::class);

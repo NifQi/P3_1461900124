@@ -88,7 +88,11 @@ class PasienController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pasien = \App\Models\Pasien::findOrFail($id);
+        $pasien->nama = $request->get('nama');
+        $pasien->nbi = $request->get('');
+        $pasien->save();
+        return redirect()->route('pasien1461900124.index', [$id]); 
     }
 
     /**
@@ -99,6 +103,8 @@ class PasienController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pasien = \App\Models\Pasien::findOrFail($id);
+        $pasien->delete();
+        return redirect()->route('pasien1461900124.index'); 
     }
 }
